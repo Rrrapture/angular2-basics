@@ -1,0 +1,52 @@
+# For Angular 2 project using Typescript
+
+# compiled output
+dist/
+app/**/*.js
+app/**/*.map
+*.css.map
+
+
+# dependencies
+node_modules/
+bower_components/
+
+
+# IDEs and editors
+.idea/
+*.sublime-project
+*.sublime-workspace
+.codekit-cache
+*.tmproj
+*.tmproject
+tmtags
+
+
+# misc
+typings
+.tscache/
+*.d.ts
+.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+
+#System Files
+.DS_Store
+Thumbs.db
+.tmp/
+tmp/
+workspace.xml
+webResources.xml
+
+#Dev files
+*.tar.gz
+*.zip
