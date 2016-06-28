@@ -1,9 +1,9 @@
-#Angular 2 Quickstart
+#Angular 2 Tour of Heroes
 
-[https://angular.io/docs/ts/latest/quickstart.html](https://angular.io/docs/ts/latest/quickstart.html)
+[https://angular.io/docs/ts/latest/tutorial/](https://angular.io/docs/ts/latest/tutorial/)
 
 ##Remote origin
-[https://github.com/Rrrapture/angular2-quickstart](https://github.com/Rrrapture/angular2-quickstart)
+[https://github.com/Rrrapture/angular2-tour-of-heroes](https://github.com/Rrrapture/angular2-tour-of-heroes)
 
 ### Building the app
 1. Prerequisite - install Node.js 
