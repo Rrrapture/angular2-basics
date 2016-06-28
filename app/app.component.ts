@@ -12,7 +12,7 @@ export class Hero {
     <article>
         <h2>{{hero.name}} details!</h2>
         <label>id: <input readonly="true" value="{{hero.id}}"></label><br>
-        <label>name: <input type="text" value="{{hero.name}}"></label>
+        <label>name: <input type="text" [(ngModel)]="hero.name" placeholder="Add name here"></label>
     </article>
     `
 })
