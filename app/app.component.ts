@@ -17,16 +17,6 @@ export class Hero {
             <span class="badge">{{hero.id}}</span> {{hero.name}}
         </li>
     </ul>
-    <article *ngIf="selectedHero">
-        <h3>{{selectedHero.name}} details!</h3>
-        <label>id: 
-            <input readonly="true" value="{{selectedHero.id}}">
-        </label>
-        <br>
-        <label>name: 
-            <input type="text" [(ngModel)]="selectedHero.name" placeholder="Add name here">
-        </label>
-    </article>
     `,
     styles: [`
         .selected {

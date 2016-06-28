@@ -12,3 +12,7 @@
 
 ###Best Practice guidelines
 Indent with 4 spaces.
+File names in lower dash case (AKA kebab-case)
+Component names end in "Component".
+Component file names end in ".component".
+
