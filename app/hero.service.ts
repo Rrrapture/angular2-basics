@@ -5,6 +5,6 @@ import { HEROES } from './mock-heroes';
 
 export class HeroService {
     getHeroes() {
-        return HEROES;
+        return Promise.resolve(HEROES);
     }
 }
