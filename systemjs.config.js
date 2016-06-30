@@ -33,8 +33,13 @@
         packages['@angular/'+pkgName] = { main: 'index.js', defaultExtension: 'js' };
     }
     // Bundled (~40 requests):
+    // fix router https://github.com/sethdorris/practice_angular2/blob/master/systemjs.config.js#L36
     function packUmd(pkgName) {
-        packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+        if (pkgName === "router") {
+            packages['@angular/' + pkgName] = { main: 'index.js', defaultExtension: 'js' };
+            return;
+        }
+        packages['@angular/'+pkgName] = { main: 'bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
     }
     // Most environments should use UMD; some (Karma) need the individual index files
     var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
