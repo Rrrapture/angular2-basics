@@ -1,5 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Hero } from './hero';
+import { ActivatedRoute } from '@angular/router';
+import { HeroService } from './hero.service';
+
 
 @Component({
     selector: 'my-hero-detail',
@@ -17,7 +20,24 @@ import { Hero } from './hero';
     `
 })
 
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit, OnDestroy {
+    constructor(
+        private heroService: HeroService,
+        private route: ActivatedRoute) {
+    }
+
+    ngOnInit() {
+        this.sub = this.route.params.subscribe(params => {
+            let id = +params['id'];//+ converts to a number
+            this.heroService.getHero(id)
+                .then(hero => this.hero = hero);
+        });
+    }
+
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
+
     @Input()
     hero: Hero;
 }
