@@ -6,18 +6,7 @@ import { HeroService } from './hero.service';
 
 @Component({
     selector: 'my-hero-detail',
-    template: `
-        <article *ngIf="hero">
-            <h3>{{hero.name}} details!</h3>
-            <label>id: 
-                <input readonly="true" value="{{hero.id}}">
-            </label>
-            <br>
-            <label>name: 
-                <input type="text" [(ngModel)]="hero.name" placeholder="Add name here">
-            </label>
-        </article>
-    `
+    templateUrl: 'app/hero-detail.component.html'
 })
 
 export class HeroDetailComponent implements OnInit, OnDestroy {
@@ -38,6 +27,12 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
         this.sub.unsubscribe();
     }
 
+    goBack() {
+        //in production, prevent going too far back
+        window.history.back();
+    }
+
     @Input()
     hero: Hero;
+    sub: any;
 }
