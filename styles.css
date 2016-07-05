@@ -139,3 +139,14 @@ nav a.router-link-active {
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
 }
+
+.go-back {
+    margin-top: 20px;
+    font-family: Arial;
+    background-color: #eee;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+}
