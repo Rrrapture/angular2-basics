@@ -1,8 +1,8 @@
 <h3>Top Heroes</h3>
 <section class="grid grid-pad">
-    <button *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
+    <a *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="heroes-dashboard__button col-1-4">
         <div class="module hero">
             <h4>{{hero.name}}</h4>
         </div>
-    </button>
+    </a>
 </section>
