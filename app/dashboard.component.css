@@ -32,7 +32,7 @@ h3 {
 }
 
 .module {
-    font-size: 10px;
+    font-size: 14px;
     max-height: 75px;
     padding: 20px;
     text-align: center;
@@ -40,11 +40,10 @@ h3 {
     background-color: #607D8B;
     border-radius: 2px;
     min-width: 60px;
+    display: block;
 }
 
-h4 {
-    position: relative;
-}
+
 .module:hover {
     background-color: #EEE;
     cursor: pointer;
@@ -59,6 +58,7 @@ h4 {
 @media (min-width: 600px) {
     .module {
         max-height: 120px;
+        font-size: 16px;
     }
 }
 
