@@ -43,7 +43,7 @@ button:disabled {
 }
 
 /* Navigation link styles */
-nav a {
+/*nav a {
     padding: 5px 10px;
     text-decoration: none;
     margin-top: 10px;
@@ -61,7 +61,7 @@ nav a:hover {
 nav a.router-link-active {
     color: #039be5;
 }
-
+*/
 /* items class */
 .items {
     margin: 0 0 2em 0;
