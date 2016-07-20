@@ -8,13 +8,15 @@ import { OnInit } from '@angular/core';
 @Component({
     selector: 'my-heroes',
     templateUrl: 'app/heroes.component.html',
-    styleUrls: ['app/heroes.component.css']
+    styleUrls: ['app/heroes.component.css'],
+    directives: [HeroDetailComponent]
 })
 
 export class HeroesComponent implements OnInit {
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
+    error: any;
 
     constructor(
         private router: Router,
@@ -32,6 +34,16 @@ export class HeroesComponent implements OnInit {
 
     gotoDetail() {
         this.router.navigate(['/detail', this.selectedHero.id]);
+    }
+
+    addHero() {
+        this.addingHero = true;
+        this.selectedHero = null;
+    }
+
+    close(savedHero: Hero) {
+        this.addingHero = false;
+        if (savedHero) { this.getHeroes(); }
     }
 }
 
