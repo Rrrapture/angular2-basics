@@ -16,6 +16,7 @@ export class HeroesComponent implements OnInit {
     title = 'Tour of Heroes';
     heroes : Hero[];
     selectedHero: Hero;
+    addingHero = false;
     error: any;
 
     constructor(

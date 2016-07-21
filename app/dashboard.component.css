@@ -22,7 +22,6 @@ h3 {
 .col-1-4 {
     width: 25%;
 }
-
 .heroes-dashboard__button {
     background-color: initial;
     border: none;
@@ -30,7 +29,6 @@ h3 {
     border-radius: 0;
     cursor: pointer;
 }
-
 .module {
     font-size: 14px;
     max-height: 75px;
@@ -42,8 +40,6 @@ h3 {
     min-width: 60px;
     display: block;
 }
-
-
 .module:hover {
     background-color: #EEE;
     cursor: pointer;
@@ -61,7 +57,6 @@ h3 {
         font-size: 16px;
     }
 }
-
 @media (min-width: 1024px) {
     /*.grid {
         margin: 0;
