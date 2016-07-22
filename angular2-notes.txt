@@ -1,0 +1,130 @@
+angular2 Basics, services and components notes.
+
+
+from 
+https://angular.io/docs/ts/latest/guide/architecture.html#!#services
+
+A component's job is to enable the user experience and nothing more. It mediates between the view (rendered by the template) and the application logic (which often includes some notion of a model). A good component presents properties and methods for data binding. It delegates everything nontrivial to services.
+
+Angular makes it easy to factor our application logic into services and make those services available to components through dependency injection.
+
+Dependency injection
+
+Service
+Dependency injection is a way to supply a new instance of a class with the fully-formed dependencies it requires. Most dependencies are services. Angular uses dependency injection to provide new components with the services they need.
+
+
+Registering at a component level --
+    providers:   [HeroService]
+
+-- means we get a new instance of the service with each new instance of that component.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+under architecture:
+https://angular.io/docs/ts/latest/guide/architecture.html
+
+
+The component does not talk directly to the Angular Http client! The component doesn't know or care how we get the data. It delegates to the HeroService.
+
+This is a golden rule: always delegate data access to a supporting service class.
+
+we do not call the service's get method in the component's constructor. We call it inside the ngOnInit lifecycle hook instead and count on Angular to call ngOnInit when it instantiates this component.
+
+    ** best practice ** simple Components
+
+   ****************************************************************
+
+Metadata tells Angular how to process a class
+
+it really is just a class. It's not a component until we tell Angular about it.
+
+
+In TypeScript, we attach metadata by using a decorator. Here's some metadata for HeroListComponent:
+
+    @Component({
+      selector:    'hero-list',
+      templateUrl: 'app/hero-list.component.html',
+      directives:  [HeroDetailComponent],
+      providers:   [HeroService]
+    })
+    export class HeroListComponent implements OnInit {
+    /* . . . */
+    }
+
+A decorator is a function.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    Data binding
+WHY USE A FRAMEWORK?
+
+    Without a framework, we would be responsible for pushing data values into the HTML controls and turning user responses into actions and value updates. Writing such push/pull logic by hand is tedious, error-prone, and a nightmare to read as any experienced jQuery programmer can attest.
+
+
+note:
+    A component is a directive-with-a-template;
+
+    While a component is technically a directive, components are so distinctive and central to Angular applications that we chose to separate components from directives in this architectural overview.
+
+
+Two other kinds of directives: structural and attribute directives.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+RxJS Library
+
+RxJS ("Reactive Extensions") is a 3rd party library, endorsed by Angular, that implements the asynchronous observable pattern.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Important Angular features and services:
+
+    Animations: The animation library makes it easy for developers to animate component behavior without deep knowledge of animation techniques or CSS.
+
+    Bootstrap: A method to configure and launch the root application component.
+
+    Change detection: Learn how Angular decides that a component property value has changed and when to update the screen. Learn how it uses zones to intercept asynchronous activity and run its change detection strategies.
+
+    Component router
+
+    Events
+
+    Forms
+
+    HTTP: Communicate with a server to get data, save data, and invoke server-side actions with an HTTP client.
+
+    Lifecycle hooks
+
+    Pipes
+
+    Router
+
+    Testing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
