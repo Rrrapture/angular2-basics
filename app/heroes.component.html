@@ -1,4 +1,11 @@
 <h2>My Heroes</h2>
+<button (click)="addHero()">Add New Hero</button>
+<div class="modal--heroes" *ngIf="addingHero">
+    <div class="modal--add-hero__bg"></div>
+    <div class="modal--add-hero">
+        <my-hero-detail (close)="close($event)"></my-hero-detail>
+    </div>
+</div>
 <ul class="heroes">
     <li *ngFor="let hero of heroes"
         (click)="onSelect(hero)"
@@ -7,13 +14,7 @@
         <button class="delete-button" (click)="deleteHero(hero, $event)">Delete</button>
     </li>
 </ul>
-
 <div class="error" *ngIf="error">{{error}}</div>
-<button (click)="addHero()">Add New Hero</button>
-<div *ngIf="addingHero">
-    <my-hero-detail (close)="close($event)"></my-hero-detail>
-</div>
-
 <div *ngIf="selectedHero">
     <h3 class="u-uppercase">
         <!--{{selectedHero.name | uppercase}} is my hero --> <!-- pipes version -->
