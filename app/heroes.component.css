@@ -69,6 +69,7 @@
 
 .heroes__delete-button:hover {
     border: solid .3em #607D8B;
+    background-color: rgba(120,120,120,1);
 }
 .modal--heroes {
     display:block;
@@ -94,7 +95,11 @@
     position:relative;
     padding: 1.5em;
     width:100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
     max-width: 20em;
     z-index:105;
     background-color: #ffffff;
+    border-radius: 4px;
 }
